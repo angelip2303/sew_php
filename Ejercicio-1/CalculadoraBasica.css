@@ -1,0 +1,78 @@
+/*Especificidad: 001*/
+body {
+    color: black;
+    background-color: #d2b48c;
+}
+
+/*Especificidad: 001*/
+h1 {
+    text-align: center;
+}
+
+/*Especificidad: 001*/
+form {
+    color: white;
+    background-color: #3d4543;
+
+    width: max-content;
+
+    border-radius: 5%;
+
+    padding: 1.2em;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 2.5em);
+    grid-template-rows: repeat(7, 1.5em);
+    gap: 1em;
+}
+
+/*Especificidad: 011*/
+input[type=button], input[type=submit] {
+    color: black;
+    background-color: #dddddd;
+    
+    border: none;
+    border-radius: 20%;
+
+    box-shadow: 0 0.2em black;
+}
+
+/*Especificidad: 021*/
+input[type=button]:active, input[type=submit]:active {
+    box-shadow: none;
+}
+
+/*Especificidad: 011*/
+input[value="mrc"],
+input[value="m+"],
+input[value="m-"]
+{
+    color: white;
+    background-color: #6f6f6f;
+}
+
+/*Especificidad: 011*/
+input[value="/"],
+input[value="*"],
+input[value="-"],
+input[value="+"]
+{
+    color: white;
+    background-color: #B3001B;
+}
+
+/*Especificidad: 011*/
+input[type=text] {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+
+    color: black;
+    background-color: #bccd95;
+
+    text-align: center;
+    text-overflow: ellipsis;
+
+    grid-column-end: span 4;
+    grid-row-end: span 2;
+}
