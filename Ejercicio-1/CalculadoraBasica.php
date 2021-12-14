@@ -13,6 +13,9 @@
     <?php
         session_start(); // iniciamos SESSION
 
+        if (!isset($_SESSION['sesion_pantalla']))
+            $_SESSION['sesion_pantalla'] = '';
+
         class CalculadoraBasica {
             // Manejamos la pantalla
             private $pantalla; // valor que debe mostrarse en la pantalla de la calculadora
@@ -134,6 +137,7 @@
         }
 
         $calculadora = new CalculadoraBasica();
+
         $pantalla = $_SESSION['sesion_pantalla'];
 
         echo "

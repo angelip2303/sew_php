@@ -1,0 +1,102 @@
+/*Especificidad: 001*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*Especificidad: 001*/
+form {
+    color: black;
+    background-color: #e8e8e8;
+
+    padding: 0.2em;
+    gap: 0.2em;
+
+    box-sizing: border-box;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+}
+
+/*Especificidad: 011*/
+input[type=button],
+input[type=submit]
+{
+    font-size: 1.5em;
+
+    background-color: #f2f2f2;
+    
+    border: none;
+}
+
+/*Especificidad: 021*/
+input[type=button]:hover,
+input[type=submit]:hover
+{
+    background-color: #c2c2c2;
+}
+
+/*Especificidad: 021*/
+input[type=button]:active,
+input[type=submit]:active
+{
+    background-color: #5a5a5a;
+}
+
+/*Especificidad: 011*/
+input[value="MC"],
+input[value="MR"],
+input[value="M-"],
+input[value="M+"],
+input[value="MS"],
+input[value="DEG"],
+input[value="RAD"]
+{
+    font-size: 1em;
+
+    background-color: #e8e8e8;
+
+    padding: 0 1em;
+    justify-self: start;
+}
+
+/*Especificidad: 011*/
+input[value="DEG"],
+input[value="RAD"]
+{
+    grid-column-end: span 5;
+}
+
+/*Especificidad: 011*/
+input[value="1"],
+input[value="2"],
+input[value="3"],
+input[value="4"],
+input[value="5"],
+input[value="6"],
+input[value="7"],
+input[value="8"],
+input[value="9"],
+input[value="0"],
+input[value="."]
+{
+    background-color: #fbfbfb;
+}
+
+/*Especificidad: 011*/
+input[type=text] {
+    font-size: 4em;
+
+    background-color: #e8e8e8;
+
+    text-align: right;
+    text-overflow: ellipsis;
+
+    border: none;
+    max-width: 100%;
+
+    grid-column-end: span 5;
+    grid-row-end: span 2;
+}
