@@ -1,0 +1,133 @@
+/*Especificidad: 001*/
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    color: #eceff4;
+    background-color: #282a36;
+
+    margin: 1em;
+    padding: 0;
+}
+
+/*Especificidad: 001*/
+h1,
+h2,
+h3 
+{
+    text-align: center;
+}
+
+/*Especificidad: 001*/
+ul {
+    padding: 0.25em;
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.25em;
+}
+
+/*Especificidad: 001*/
+li {
+    background-color: #44475a;
+    padding: 1em;
+}
+
+/*Especificidad: 001*/
+form {
+    /* Colors */
+    background-color: #44475a;
+    color: #f8f8f2;
+
+    display: grid;
+    gap: 0.5em;
+
+    /* Sizing */
+    width: 80%;
+    padding-top: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    margin: auto;
+}
+
+/*Especificidad: 001*/
+button {
+    color: #eceff4;
+    background-color: #4c566a;
+
+    padding: 0.5em 1em;
+    border: 0.2em solid #6272a4;
+    margin-top: 5%;
+}
+
+/*Especificidad: 011*/
+button:hover {
+    background-color: #2e3440;
+}
+
+/*Especificidad: 011*/
+button:active {
+    border: 0.2em solid #e5e9f0;
+}
+
+/*Especificidad: 001*/
+input, textarea {
+    /* Colors */
+    background-color: #fbfbfb; 
+    color:#282a36;
+
+    box-sizing: border-box;
+
+    /* Sizing */
+    width: 100%; 
+    height: 2.5em;
+    border: none;
+}
+
+/*Especificidad: 021*/
+/*Especificidad: 021*/
+/*Especificidad: 021*/
+/*Especificidad: 011*/
+input[type=text]:focus, 
+input[type=password]:focus
+{
+    outline: 0.2em solid #bd93f9;
+}
+
+/*Especificidad: 001*/
+img {
+    width: 100%;
+}
+
+/*Especificidad: 011*/
+input[type=submit] {
+    /* Colors */
+    background-color: #50fa7b;
+    color: #282a36;
+
+    /* Positioning */
+    padding: 3% 5%;
+    height: auto;
+    margin-bottom: 0em;
+
+    /* Text */
+    font-family: Verdana, sans-serif;
+    border: 0.1em solid #50fa7b;
+    text-decoration-line: none;
+    font-size: 1.5em;
+}
+
+/*Especificidad: 021*/
+input[type=submit]:hover {
+    background-color: #44475a;
+    color: #f8f8f2;
+}
+
+/*Especificidad: 021*/
+input[type=submit]:active {
+    background-color: #44475a;
+    color: #ff79c6;
+
+    border: 0.1em solid #ff79c6;
+}

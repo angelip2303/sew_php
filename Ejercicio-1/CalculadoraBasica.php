@@ -16,6 +16,10 @@
         if (!isset($_SESSION['sesion_pantalla']))
             $_SESSION['sesion_pantalla'] = '';
 
+        // Manejamos la memoria a través de la sesión
+        if (!isset($_SESSION['sesion_memoria']))
+            $_SESSION['sesion_memoria'] = 0;
+
         class CalculadoraBasica {
             // Manejamos la pantalla
             private $pantalla; // valor que debe mostrarse en la pantalla de la calculadora
@@ -53,19 +57,21 @@
                     // Otros botones
                     if(isset($_POST['borrar'])) $this->borrar();
 
-                    // Manejamos la pantalla a través de la sesión
+                    // Por si acabamos de hacer unset a las sesiones
+
                     if (!isset($_SESSION['sesion_pantalla']))
                         $_SESSION['sesion_pantalla'] = '';
-                    $_SESSION['sesion_pantalla'] .= $this->pantalla;
-
+            
                     // Manejamos la memoria a través de la sesión
                     if (!isset($_SESSION['sesion_memoria']))
                         $_SESSION['sesion_memoria'] = 0;
+
+                    $_SESSION['sesion_pantalla'] .= $this->pantalla;
                 }
             }
         
             // Añadimos el caracter a la pantalla
-            private function caracter($caracter) {
+            public function caracter($caracter) {
                 $this->pantalla .= $caracter;
             }
         
@@ -86,6 +92,10 @@
                     } catch (Exception $e) {
                         $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
                     } catch(ParseError $p){
+                        $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
+                    } catch(DivisionByZeroError $d){
+                        $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
+                    } catch(Error $e){
                         $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
                     }
             }

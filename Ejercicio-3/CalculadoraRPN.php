@@ -13,8 +13,13 @@
     <?php
         session_start(); // iniciamos SESSION
 
-        if (!isset($_SESSION['sesion_pantalla']))
-            $_SESSION['sesion_pantalla'] = '';
+        // Necesario para realizar algunos cálculos
+        if (!isset($_SESSION['es_funcion_inversa']))
+            $_SESSION['es_funcion_inversa'] = false;
+
+        // Manejamos la pila a través de la sesión
+        if (!isset($_SESSION['sesion_pila']))
+            $_SESSION['sesion_pila'] = array();
 
         class CalculadoraRPN {
             
@@ -55,18 +60,9 @@
                     if(isset($_POST['borrar'])) $this->borrar();
                     if(isset($_POST['shift'])) $this->shift();
 
-                    // Manejamos la pantalla a través de la sesión
                     if (!isset($_SESSION['sesion_pantalla']))
                         $_SESSION['sesion_pantalla'] = '';
                     $_SESSION['sesion_pantalla'] .= $this->pantalla;
-
-                    // Manejamos la pila a través de la sesión
-                    if (!isset($_SESSION['sesion_pila']))
-                        $_SESSION['sesion_pila'] = array();
-
-                    // Necesario para realizar algunos cálculos
-                    if (!isset($_SESSION['es_funcion_inversa']))
-                        $_SESSION['es_funcion_inversa'] = false;
                 }
             }
         

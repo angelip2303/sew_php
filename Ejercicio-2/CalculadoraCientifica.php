@@ -14,9 +14,20 @@
         if (!isset($_SESSION['sesion_pantalla']))
             $_SESSION['sesion_pantalla'] = '';
 
+        // Manejamos la memoria a través de la sesión
+        if (!isset($_SESSION['sesion_memoria']))
+            $_SESSION['sesion_memoria'] = 0;
+
+        // Necesario para realizar algunos cálculos
+        if (!isset($_SESSION['es_radianes']))
+            $_SESSION['es_radianes'] = false;
+
+        if (!isset($_SESSION['es_funcion_circular']))
+                    $_SESSION['es_funcion_circular'] = false;
+
         class CalculadoraBasica {
             // Manejamos la pantalla
-            private $pantalla; // valor que debe mostrarse en la pantalla de la calculadora
+            public $pantalla; // valor que debe mostrarse en la pantalla de la calculadora
 
             public function __construct () {
                 $this->pantalla = '';
@@ -50,12 +61,12 @@
 
                     // Otros botones
                     if(isset($_POST['borrar'])) $this->borrar();
+                
+                    // Por si acabamos de hacer unset a las sesiones
 
-                    // Manejamos la pantalla a través de la sesión
                     if (!isset($_SESSION['sesion_pantalla']))
                         $_SESSION['sesion_pantalla'] = '';
-                    $_SESSION['sesion_pantalla'] .= $this->pantalla;
-
+            
                     // Manejamos la memoria a través de la sesión
                     if (!isset($_SESSION['sesion_memoria']))
                         $_SESSION['sesion_memoria'] = 0;
@@ -63,7 +74,7 @@
             }
         
             // Añadimos el caracter a la pantalla
-            private function caracter($caracter) {
+            public function caracter($caracter) {
                 $this->pantalla .= $caracter;
             }
         
@@ -84,6 +95,10 @@
                     } catch (Exception $e) {
                         $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
                     } catch(ParseError $p){
+                        $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
+                    } catch(DivisionByZeroError $d){
+                        $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
+                    } catch(Error $e){
                         $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
                     }
             }
@@ -123,10 +138,7 @@
                     $_SESSION['sesion_memoria'] = eval("return $memoria"
                                                              ."$operador"
                                                              ."$pantalla ;");
-                } catch (Exception $e) {
-                    $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
-                    $this->borrar();
-                } catch(ParseError $p){
+                } catch (Error $e) {
                     $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
                     $this->borrar();
                 }
@@ -144,8 +156,8 @@
                     if(isset($_POST['unidad_angulo'])) $this->cambiar_unidades_angulo();
 
                     // Nos encargamos de manejar los botones de los números
-                    if(isset($_POST['pi'])) $this->caracter(M_E);
-                    if(isset($_POST['e'])) $this->caracter(M_PI);
+                    if(isset($_POST['pi'])) $this->caracter(M_PI);
+                    if(isset($_POST['e'])) $this->caracter(M_E);
 
                     if(isset($_POST['parentesis_izquierdo'])) $this->caracter('(');
                     if(isset($_POST['parentesis_derecho'])) $this->caracter(')');
@@ -181,12 +193,7 @@
                     // Otros botones
                     if(isset($_POST['backspace'])) $this->backspace();
 
-                    // Necesario para realizar algunos cálculos
-                    if (!isset($_SESSION['es_funcion_circular']))
-                        $_SESSION['es_funcion_circular'] = false;
-
-                    if (!isset($_SESSION['es_radianes']))
-                        $_SESSION['es_radianes'] = false;
+                    $_SESSION['sesion_pantalla'] .= $this->pantalla;
                 }
             }
 
@@ -201,17 +208,17 @@
 
             public function get_coseno() {
                 if (isset($_SESSION['es_funcion_circular']))
-                    return $_SESSION['es_funcion_circular'] ? 'cos' : 'cosh';
+                    return $_SESSION['es_funcion_circular'] ? 'cosh' : 'cos';
             }
 
             public function get_seno() {
                 if (isset($_SESSION['es_funcion_circular']))
-                    return $_SESSION['es_funcion_circular'] ? 'sen' : 'senh';
+                    return $_SESSION['es_funcion_circular'] ? 'senh' : 'sen';
             }
 
             public function get_tangente() {
                 if (isset($_SESSION['es_funcion_circular']))
-                    return $_SESSION['es_funcion_circular'] ? 'tan' : 'tanh';
+                    return $_SESSION['es_funcion_circular'] ? 'tanh' : 'tan';
             }
 
             // +------------------------+
@@ -223,9 +230,7 @@
                     try {
                         $expresion = $function($_SESSION['sesion_pantalla']);
                         $_SESSION['sesion_pantalla'] = eval("return $expresion ;"); 
-                    } catch (Exception $e) {
-                        $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
-                    } catch(ParseError $p){
+                    } catch (Error $e) {
                         $_SESSION['sesion_pantalla'] = 'SYNTAX ERROR';
                     }
             }
@@ -236,23 +241,23 @@
 
             private function seno() {
                 if ($_SESSION['es_funcion_circular']) // si estamos trabajando con funciones circulares: sinh
-                    $this->unary_operation(x -> sinh($this->angulo(x)));
+                    $this->unary_operation(fn($x) => sinh($this->angulo($x)));
                 else // si estamos trabjando con funciones trigonométricas convencionales
-                    $this->unary_operation(x -> sin($this->angulo(x)));
+                    $this->unary_operation(fn($x) => sin($this->angulo($x)));
             }
 
             private function coseno() {
                 if ($_SESSION['es_funcion_circular']) // si estamos trabajando con funciones circulares: cosh
-                    $this->unary_operation(x -> cosh($this->angulo(x)));
+                    $this->unary_operation(fn($x) => cosh($this->angulo($x)));
                 else // si estamos trabjando con funciones trigonométricas convencionales
-                    $this->unary_operation(x -> cos($this->angulo(x)));
+                    $this->unary_operation(fn($x) => cos($this->angulo($x)));
             }
 
             private function tangente() {
                 if ($_SESSION['es_funcion_circular'])  // si estamos trabajando con funciones circulares: tanh
-                    $this->unary_operation(x -> tanh($this->angulo(x)));
+                    $this->unary_operation(fn($x) => tanh($this->angulo($x)));
                 else // si estamos trabjando con funciones trigonométricas convencionales
-                    $this->unary_operation(x -> tan($this->angulo(x)));
+                    $this->unary_operation(fn($x) => tan($this->angulo($x)));
             }
 
             // +------------------------------+
@@ -262,7 +267,7 @@
             private function backspace() {
                 $_SESSION['sesion_pantalla'] = substr($_SESSION['sesion_pantalla'],
                                                       0,
-                                                      count($_SESSION['sesion_pantalla']) - 1);
+                                                      strlen($_SESSION['sesion_pantalla']) - 1);
             }
 
             // +-----------------+
