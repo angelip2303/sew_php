@@ -142,7 +142,7 @@
                 // Si hemos conseguido crear la tabla...
                 if($this->db->query($tabla) === TRUE)
                     $this->mensaje_de_exito(
-                        "<p> La tabla PruebasUsabilidad ha sido creada correctamente </p>"
+                        "La tabla PruebasUsabilidad ha sido creada correctamente"
                     );
 				else // En caso de que no lo hayamos conseguido...
                     $this->mensaje_de_error(
