@@ -344,13 +344,13 @@
             <input type='submit' value='('       name='parentesis_izquierdo' />
             <input type='submit' value=')'       name='parentesis_derecho' />
             <input type='submit' value='n!'      name='factorial' />
-            <input type='submit' value='&#247'   name='division' />
+            <input type='submit' value='&#247;'  name='division' />
 
-            <input type='submit' value='x^y'   name='potencia' />
-            <input type='submit' value='7'     name='7' />
-            <input type='submit' value='8'     name='8' />
-            <input type='submit' value='9'     name='9' />
-            <input type='submit' value='&#215' name='producto' />
+            <input type='submit' value='x^y'    name='potencia' />
+            <input type='submit' value='7'      name='7' />
+            <input type='submit' value='8'      name='8' />
+            <input type='submit' value='9'      name='9' />
+            <input type='submit' value='&#215;' name='producto' />
 
             <input type='submit' value='10x' name='potencia10' />
             <input type='submit' value='4'   name='4' />
