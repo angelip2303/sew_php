@@ -5,6 +5,11 @@ body {
 }
 
 /*Especificidad: 001*/
+h1 {
+    display: none;
+}
+
+/*Especificidad: 001*/
 form {
     color: black;
     background-color: #e8e8e8;

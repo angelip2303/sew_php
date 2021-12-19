@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="CalculadoraCientifica.css">
 </head>
 <body>
+    <h1> Calculadora Científica </h1>
     <?php
         session_start(); // iniciamos SESSION
 
