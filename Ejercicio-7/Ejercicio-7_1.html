@@ -19,74 +19,28 @@
                 <button type='submit' name='filtrar_peliculas_oscar'> Filtrar películas que han ganado un Óscar </button>
             </form>
         </header>
-                    <p>No has iniciado sesión.</p>
-                <h2> AC </h2><ul>
+                <form action='#' method='post'>
+                    <h2>Iniciar sesión</h2>
+
+                    <label for='iniciar_sesion_dni'>DNI:</label>
+                    <input type='text' id='iniciar_sesion_dni' name='iniciar_sesion_dni' />
+
+                    <input type='submit' name='iniciar_sesion_form' value='Iniciar sesión' />
+                </form>
+                
+                    <p>Has iniciado sesión como: .</p>
+                <h2> Listado de películas </h2><p> Aquí se muestran las distintas películas que están en nuestro videoclub, si quieres filtrar las películas puedes hacerlo! </p><ul>
                 <li>
-                    <h3> La fuga de alcatraz </h3>
-                    <h4> Don Siegel </h4>
-                    <img src='media/la_fuga_de_alcatraz.jpg' alt='La fuga de alcatraz'/>
+                    <h3> El Bueno, el feo y el malo </h3>
+                    <h4> Sergio Leone </h4>
+                    <img src='media/el_bueno_el_feo_y_el_malo.jpg' alt='El Bueno, el feo y el malo'/>
                     <p> Clint Eastwood </p>
 
                     <form action='#' method='post'>
-                        <input type='submit' name='005X' value='Alquilar' />
-                    </form>
-                </li>
-            </ul><h2> AV </h2><ul>
-                <li>
-                    <h3> La momia </h3>
-                    <h4> Stephen Sommers </h4>
-                    <img src='media/la_momia.jpg' alt='La momia'/>
-                    <p> Brendan Fraser </p>
-
-                    <form action='#' method='post'>
-                        <input type='submit' name='010X' value='Alquilar' />
-                    </form>
-                </li>
-            </ul><h2> BI </h2><ul>
-                <li>
-                    <h3> American Sniper </h3>
-                    <h4> Clint Eastwood </h4>
-                    <img src='media/american_sniper.jpg' alt='American Sniper'/>
-                    <p> Bradley Cooper </p>
-
-                    <form action='#' method='post'>
-                        <input type='submit' name='006X' value='Alquilar' />
-                    </form>
-                </li>
-            </ul><h2> CI </h2><ul>
-                <li>
-                    <h3> Los juegos del hambre </h3>
-                    <h4> Gary Ross </h4>
-                    <img src='media/los_juegos_del_hambre.jpg' alt='Los juegos del hambre'/>
-                    <p> Jennifer Lawrence </p>
-
-                    <form action='#' method='post'>
-                        <input type='submit' name='007X' value='Alquilar' />
+                        <input type='submit' name='000X' value='Alquilar' />
                     </form>
                 </li>
             
-                <li>
-                    <h3> Timeline </h3>
-                    <h4> Richard Donner </h4>
-                    <img src='media/timeline.jpg' alt='Timeline'/>
-                    <p> Paul Walker </p>
-
-                    <form action='#' method='post'>
-                        <input type='submit' name='008X' value='Alquilar' />
-                    </form>
-                </li>
-            </ul><h2> CO </h2><ul>
-                <li>
-                    <h3> Los visitantes </h3>
-                    <h4> Jean-Marie Poiré </h4>
-                    <img src='media/los_visitantes.jpg' alt='Los visitantes'/>
-                    <p> Jean Reno </p>
-
-                    <form action='#' method='post'>
-                        <input type='submit' name='011X' value='Alquilar' />
-                    </form>
-                </li>
-            </ul><h2> DR </h2><ul>
                 <li>
                     <h3> Gran Torino </h3>
                     <h4> Clint Eastwood </h4>
@@ -108,7 +62,7 @@
                         <input type='submit' name='002X' value='Alquilar' />
                     </form>
                 </li>
-            </ul><h2> PO </h2><ul>
+            
                 <li>
                     <h3> Harry el Sucio </h3>
                     <h4> Don Siegel </h4>
@@ -117,17 +71,6 @@
 
                     <form action='#' method='post'>
                         <input type='submit' name='003X' value='Alquilar' />
-                    </form>
-                </li>
-            </ul><h2> WE </h2><ul>
-                <li>
-                    <h3> El Bueno, el feo y el malo </h3>
-                    <h4> Sergio Leone </h4>
-                    <img src='media/el_bueno_el_feo_y_el_malo.jpg' alt='El Bueno, el feo y el malo'/>
-                    <p> Clint Eastwood </p>
-
-                    <form action='#' method='post'>
-                        <input type='submit' name='000X' value='Alquilar' />
                     </form>
                 </li>
             
@@ -143,6 +86,50 @@
                 </li>
             
                 <li>
+                    <h3> La fuga de alcatraz </h3>
+                    <h4> Don Siegel </h4>
+                    <img src='media/la_fuga_de_alcatraz.jpg' alt='La fuga de alcatraz'/>
+                    <p> Clint Eastwood </p>
+
+                    <form action='#' method='post'>
+                        <input type='submit' name='005X' value='Alquilar' />
+                    </form>
+                </li>
+            
+                <li>
+                    <h3> American Sniper </h3>
+                    <h4> Clint Eastwood </h4>
+                    <img src='media/american_sniper.jpg' alt='American Sniper'/>
+                    <p> Bradley Cooper </p>
+
+                    <form action='#' method='post'>
+                        <input type='submit' name='006X' value='Alquilar' />
+                    </form>
+                </li>
+            
+                <li>
+                    <h3> Los juegos del hambre </h3>
+                    <h4> Gary Ross </h4>
+                    <img src='media/los_juegos_del_hambre.jpg' alt='Los juegos del hambre'/>
+                    <p> Jennifer Lawrence </p>
+
+                    <form action='#' method='post'>
+                        <input type='submit' name='007X' value='Alquilar' />
+                    </form>
+                </li>
+            
+                <li>
+                    <h3> Timeline </h3>
+                    <h4> Richard Donner </h4>
+                    <img src='media/timeline.jpg' alt='Timeline'/>
+                    <p> Paul Walker </p>
+
+                    <form action='#' method='post'>
+                        <input type='submit' name='008X' value='Alquilar' />
+                    </form>
+                </li>
+            
+                <li>
                     <h3> Django desencadenado </h3>
                     <h4> Quentin Tarantino </h4>
                     <img src='media/django.jpg' alt='Django desencadenado'/>
@@ -150,6 +137,28 @@
 
                     <form action='#' method='post'>
                         <input type='submit' name='009X' value='Alquilar' />
+                    </form>
+                </li>
+            
+                <li>
+                    <h3> La momia </h3>
+                    <h4> Stephen Sommers </h4>
+                    <img src='media/la_momia.jpg' alt='La momia'/>
+                    <p> Brendan Fraser </p>
+
+                    <form action='#' method='post'>
+                        <input type='submit' name='010X' value='Alquilar' />
+                    </form>
+                </li>
+            
+                <li>
+                    <h3> Los visitantes </h3>
+                    <h4> Jean-Marie Poiré </h4>
+                    <img src='media/los_visitantes.jpg' alt='Los visitantes'/>
+                    <p> Jean Reno </p>
+
+                    <form action='#' method='post'>
+                        <input type='submit' name='011X' value='Alquilar' />
                     </form>
                 </li>
             </ul></body>

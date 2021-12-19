@@ -222,6 +222,9 @@
             }
 
             private function peliculas_gui() {
+                echo '<h2> Listado de películas </h2>';
+                echo '<p> Aquí se muestran las distintas películas que están en nuestro videoclub, si quieres filtrar las películas puedes hacerlo! </p>';
+
                 // Comprobamos si hay que filtrar por Óscar
                 $peliculas = array();
 
