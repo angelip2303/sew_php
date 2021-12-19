@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Ángel Iglesias Préstamo" />
+    <meta name="viewport" content ="width=device-width, initial scale=1.0" />
+    <title>Ejercicio7 - Videoclub</title>
+    <link rel="stylesheet" href="Ejercicio7.css">
+</head>
+<body>
+    
+        <header>
+        <h1>El Videoclub de Gelín</h1>
+            <form action='#' method='post'> 
+                <button type='submit' name='iniciar_sesion'> Iniciar sesión </button>
+                <button type='submit' name='cerrar_sesion'> Cerrar sesión </button>
+                <button type='submit' name='devolver_pelicula'> Devolver película </button>
+                <button type='submit' name='filtrar_peliculas_categoria'> Filtrar películas por categoría </button>
+                <button type='submit' name='filtrar_peliculas_oscar'> Filtrar películas que han ganado un Óscar </button>
+            </form>
+        </header>
+                <form action='#' method='post'>
+                    <h2>Devolver película</h2>
+
+                    <label for='devolver_pelicula_id'>ID de la película:</label>
+                    <input type='text' id='devolver_pelicula_id' name='devolver_pelicula_id' />
+
+                    <input type='submit' name='devolver_pelicula_form' value='Devolver película' />
+                </form>
+                
+                    <p>No has iniciado sesión.</p>
+                <ul>
+                <li>
+                    <h3> Million Dollar Baby </h3>
+                    <h4> Clint Eastwood </h4>
+                    <img src='media/million_dollar_baby.jpg' alt='Million Dollar Baby'/>
+                    <p> Clint Eastwood </p>
+
+                    <form action='#' method='post'>
+                        <input type='submit' name='002X' value='Alquilar' />
+                    </form>
+                </li>
+            
+                <li>
+                    <h3> Sin Perdón </h3>
+                    <h4> Clint Eastwood </h4>
+                    <img src='media/sin_perdon.jpg' alt='Sin Perdón'/>
+                    <p> Clint Eastwood </p>
+
+                    <form action='#' method='post'>
+                        <input type='submit' name='004X' value='Alquilar' />
+                    </form>
+                </li>
+            
+                <li>
+                    <h3> American Sniper </h3>
+                    <h4> Clint Eastwood </h4>
+                    <img src='media/american_sniper.jpg' alt='American Sniper'/>
+                    <p> Bradley Cooper </p>
+
+                    <form action='#' method='post'>
+                        <input type='submit' name='006X' value='Alquilar' />
+                    </form>
+                </li>
+            
+                <li>
+                    <h3> Los juegos del hambre </h3>
+                    <h4> Gary Ross </h4>
+                    <img src='media/los_juegos_del_hambre.jpg' alt='Los juegos del hambre'/>
+                    <p> Jennifer Lawrence </p>
+
+                    <form action='#' method='post'>
+                        <input type='submit' name='007X' value='Alquilar' />
+                    </form>
+                </li>
+            
+                <li>
+                    <h3> Django desencadenado </h3>
+                    <h4> Quentin Tarantino </h4>
+                    <img src='media/django.jpg' alt='Django desencadenado'/>
+                    <p> Leonardo diCaprio </p>
+
+                    <form action='#' method='post'>
+                        <input type='submit' name='009X' value='Alquilar' />
+                    </form>
+                </li>
+            </ul></body>
+</html>
