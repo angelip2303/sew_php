@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Ángel Iglesias Préstamo" />
+    <meta name="viewport" content ="width=device-width, initial scale=1.0" />
+    <title>Ejercicio3 - CalculadoraRPN</title>
+    <link rel="stylesheet" href="CalculadoraRPN.css">
+</head>
+<body>
+    <h1>Calculadora RPN</h1>
+
+    
+        <form action='#' method='post'>
+            <!-- 2 PANTALLAS para ver los cálculos -->
+            <label for='stack' hidden>Pantalla para mostrar los resultados en la pila</label>
+            <textarea id='stack' rows='5' disabled>2193689
+36</textarea>
+
+            <label for='result' hidden>Pantalla para mostrar los resultados de los cálculos</label>
+            <input type='text' id='result' value='366' disabled>
+
+            <!-- Botones para realizar los cálculos -->
+            <input type='submit' value='&Sqrt;' name='raiz_cuadrada' />
+            <input type='submit' value='x^2'    name='cuadrado' />
+            <input type='submit' value='log'    name='logaritmo' />
+            <input type='submit' value='SHIFT'  name='shift' />
+
+            <input type='submit' value='asen'   name='seno' />
+            <input type='submit' value='acos'   name='coseno' />
+            <input type='submit' value='atan'   name='tangente' />
+            <input type='submit' value='&div;' name='division' />
+
+            <input type='submit' value='7' name='7' />
+            <input type='submit' value='8' name='8' />
+            <input type='submit' value='9' name='9' />
+            <input type='submit' value='*' name='producto' />
+
+            <input type='submit' value='4' name='4' />
+            <input type='submit' value='5' name='5' />
+            <input type='submit' value='6' name='6' />
+            <input type='submit' value='-' name='resta' />
+
+            <input type='submit' value='1' name='1' />
+            <input type='submit' value='2' name='2' />
+            <input type='submit' value='3' name='3' />
+            <input type='submit' value='+' name='suma' />
+
+            <input type='submit' value='C'     name='borrar' />
+            <input type='submit' value='0'     name='0' />
+            <input type='submit' value='.'     name='punto' />
+            <input type='submit' value='ENTER' name='enter' />
+        </form></body>
+</html>

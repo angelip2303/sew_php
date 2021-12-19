@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Ángel Iglesias Préstamo" />
+    <meta name="viewport" content ="width=device-width, initial scale=1.0" />
+    <title>Ejercicio2 - CalculadoraCientífica</title>
+    <link rel="stylesheet" href="CalculadoraCientifica.css">
+</head>
+<body>
+    
+        <form action='#' method='post'>
+            <!-- PANTALLA para mostrar los resultados -->
+            <label for='result' hidden>Pantalla para mostrar los resultados de los cálculos</label>
+            <input type='text' id='result' value='366' disabled>
+    
+            <!-- Units -->
+            <input type='submit' value='DEG' name='unidad_angulo' />
+
+            <!-- Memory management -->
+            <input type='submit' value='MC' name='mc' />
+            <input type='submit' value='MR' name='mr' />
+            <input type='submit' value='M-' name='m-' />
+            <input type='submit' value='M+' name='m+' />
+            <input type='submit' value='MS' name='guardar_en_memoria' />
+
+            <!-- Buttons to perform the calculations -->
+            <input type='submit' value='SHIFT'  name='shift' />
+            <input type='submit' value='&#960;' name='pi' />
+            <input type='submit' value='e'      name='e' />
+            <input type='submit' value='C'      name='borrar' />
+            <input type='submit' value='back'   name='backspace' />
+
+            <input type='submit' value='x^2'       name='cuadrado' />
+            <input type='submit' value='sen'     name='seno' />
+            <input type='submit' value='cos'   name='coseno' />
+            <input type='submit' value='tan' name='tangente' />
+            <input type='submit' value='mod'       name='modulo' />
+
+            <input type='submit' value='&#8730;' name='raiz_cuadrada' />
+            <input type='submit' value='('       name='parentesis_izquierdo' />
+            <input type='submit' value=')'       name='parentesis_derecho' />
+            <input type='submit' value='n!'      name='factorial' />
+            <input type='submit' value='&#247;'  name='division' />
+
+            <input type='submit' value='x^y'    name='potencia' />
+            <input type='submit' value='7'      name='7' />
+            <input type='submit' value='8'      name='8' />
+            <input type='submit' value='9'      name='9' />
+            <input type='submit' value='&#215;' name='producto' />
+
+            <input type='submit' value='10x' name='potencia10' />
+            <input type='submit' value='4'   name='4' />
+            <input type='submit' value='5'   name='5' />
+            <input type='submit' value='6'   name='6' />
+            <input type='submit' value='-'   name='resta' />
+
+            <input type='submit' value='log' name='logaritmo' />
+            <input type='submit' value='1'   name='1' />
+            <input type='submit' value='2'   name='2' />
+            <input type='submit' value='3'   name='3' />
+            <input type='submit' value='+'   name='suma' />
+
+            <input type='submit' value='ln'     name='logaritmo_neperiano' />
+            <input type='submit' value='&#177;' name='mas_menos' />
+            <input type='submit' value='0'      name='0' />
+            <input type='submit' value='.'      name='punto' />
+            <input type='submit' value='='      name='igual' />
+        </form></body>
+</html>
