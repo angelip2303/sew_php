@@ -179,8 +179,11 @@
 
                     <fieldset>
                         <legend> ¿Sexo? </legend>
-                        <input type='radio' name='insertar_sexo' value='0'> Hombre <br />
-                        <input type='radio' name='insertar_sexo' value='1'> Mujer <br />
+                        <label for='insertar_sexo_hombre'>Hombre</label>
+                        <input type='radio' id='insertar_sexo_hombre' name='insertar_sexo' value='0'>
+                        
+                        <label for='insertar_sexo_mujer'>Mujer</label>
+                        <input type='radio' id='insertar_sexo_mujer'  name='insertar_sexo' value='1'>
                     </fieldset>
 
                     <label for='insertar_nivel'>Nivel informático:</label>
@@ -191,8 +194,11 @@
 
                     <fieldset>
                         <legend> Se ha relizado correctamente la tarea? </legend>
-                        <input type='radio' name='insertar_es_completada' value='1'> Sí <br />
-                        <input type='radio' name='insertar_es_completada' value='0'> No <br />
+                        <label for='insertar_es_completada_si'>Sí</label>
+                        <input type='radio' id='insertar_es_completada_si' name='insertar_es_completada' value='1'>
+
+                        <label for='insertar_es_completada_no'>No</label>
+                        <input type='radio' id='insertar_es_completada_no' name='insertar_es_completada' value='0'>
                     </fieldset>
 
                     <label for='insertar_comentarios'>Comentarios sobre problemas encontrados:</label>
@@ -417,8 +423,11 @@
 
                     <fieldset>
                         <legend> ¿Sexo? </legend>
-                        <input type='radio' name='modificar_sexo' value='0' checked> Hombre <br />
-                        <input type='radio' name='modificar_sexo' value='1'> Mujer <br />
+                        <label for='insertar_sexo_hombre'>Hombre</label>
+                        <input type='radio' id='insertar_sexo_hombre' name='insertar_sexo' value='0'>
+                        
+                        <label for='insertar_sexo_mujer'>Mujer</label>
+                        <input type='radio' id='insertar_sexo_mujer'  name='insertar_sexo' value='1'>
                     </fieldset>
 
                     <label for='modificar_nivel'>Nivel informático:</label>
@@ -429,8 +438,11 @@
 
                     <fieldset>
                         <legend> Se ha relizado correctamente la tarea? </legend>
-                        <input type='radio' name='modificar_es_completada' value='1' checked> Sí <br />
-                        <input type='radio' name='modificar_es_completada' value='0'> No <br />
+                        <label for='insertar_es_completada_si'>Sí</label>
+                        <input type='radio' id='insertar_es_completada_si' name='insertar_es_completada' value='1'>
+
+                        <label for='insertar_es_completada_no'>No</label>
+                        <input type='radio' id='insertar_es_completada_no' name='insertar_es_completada' value='0'>
                     </fieldset>
 
                     <label for='modificar_comentarios'>Comentarios sobre problemas encontrados:</label>
