@@ -418,8 +418,9 @@
                 // Tenemos que mostrar las películas filtradas por categorías
                 if ($_SESSION['filtrar_peliculas']) {
                     foreach ($_SESSION['categorias'] as $categoria) {
-                        echo "<ul>";
                         echo "<h2> $categoria->tipo </h2>";
+
+                        echo "<ul>";
 
                         foreach($_SESSION['peliculas'] as $pelicula)
                             if ($pelicula->categoria_id === $categoria->id)
