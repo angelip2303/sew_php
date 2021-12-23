@@ -15,7 +15,7 @@
     <?php
         class PrecioPlata {
             // Datos de la petición que queremos realizar
-            const APIKEY = "goldapi-7m4x5xtkwetrxyk-io";
+            const APIKEY = "goldapi";
             const METAL = "XAG"; // plata
             CONST MONEDA = "EUR"; // euros
 
